@@ -1,0 +1,61 @@
+{% extends 'base_org.html' %}
+
+{% block title %} 机构讲师 {% endblock %}
+{% block crumbs %} 机构讲师 {% endblock %}
+{% block content %}
+    <div class="right companycenter layout" >
+        <div class="head">
+            <h1>机构讲师</h1>
+        </div>
+        <div class="messagelist">
+            <div class=" butler_list butler-fav-box">
+                {%  for teacher in org_teacher.object_list %}
+                    <dl class="des users">
+                    <dt>
+                        <a href="">
+                        <img width="100" height="100" class="scrollLoading" data-url="{{ MEDIA_URL }}{{ teacher.image }}" src="{{ MEDIA_URL }}{{ teacher.image }}"/>
+                        </a>
+                    </dt>
+                    <dd>
+                        <h1>
+                            <a href="">
+                            {{ teacher.name }}<span class="key">已认证</span>
+                            </a>
+                        </h1>
+                        <ul class="cont clearfix">
+                            <li class="time">工作年限：<span>{{ teacher.work_years }}</span></li>
+                            <li class="c7">课程数：<span>{{ teacher.course_nums }}</span></li>
+                        </ul>
+                    </dd>
+                </dl>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="pageturn">
+            <ul class="pagelist">
+                {% if org_teacher.has_previous %}
+                    <li class="long"><a href="?{{ org_teacher.previous_page_number.querystring }}" class="prev">上一页</a></li>
+                {% endif %}
+{#                <li class="active"><a class="page" href="?page=2">2</a></li>#}
+{#                <li class="active"><a href="?page=1">1</a></li>#}
+{#            不能＋class==page 不然微了#}
+                {% for page in org_teacher.pages %}
+                    {% if page %}
+                        {% ifequal page org_course.number %}
+                            <li class="active"><a href="?{{ page.querystring }}" >{{ page }}</a></li>
+                        {% else %}
+                            <li><a href="?{{ page.querystring }}" >{{ page }}</a></li>
+                        {% endifequal %}
+                    {% else %}
+                        <li class="none"><a href="">...</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if org_teacher.has_next %}
+                    <li class="long"><a href="?{{ org_teacher.next_page_number.querystring }}">下一页</a></li>
+                {% endif %}
+            </ul>
+
+        </div>
+    </div>
+{% endblock %}

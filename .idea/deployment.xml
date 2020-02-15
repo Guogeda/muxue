@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="101.200.132.67">
+    <serverData>
+      <paths name="101.200.132.67">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/muxue" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
