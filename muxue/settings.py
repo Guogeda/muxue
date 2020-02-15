@@ -91,9 +91,9 @@ WSGI_APPLICATION = 'muxue.wsgi.application'
 DATABASES = {
 	'default': {
 		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'mydjango',
+		'NAME': '创建的数据库名称',
 		'USER': 'root',
-		'PASSWORD': '369369',
+		'PASSWORD': '登陆密码',
 		'HOST': '127.0.0.1',
 		'PORT': '3306',
 	},
@@ -157,7 +157,4 @@ EMAIL_FROM = '1725128685@qq.com'  # 自定义配置，使用时需要引入
 
 # 分页器
 PAGINATION_SETTINGS = {
-	'PAGE_RANGE_DISPLAYED': 10,  # 中间显示多少个页码
-	'MARGIN_PAGES_DISPLAYED': 2,  # 两端显示多少个页码
-	'SHOW_FIRST_PAGE_WHEN_INVALID': True,  # 当输入页数不合法是否要跳到第一页
-}
+	'PAGE_RANGE_DISPLAYED': 10,  # 中间显
