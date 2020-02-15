@@ -43,7 +43,7 @@
 * #### 项目创建遇到的bug
     1.  django.db.migrations.exceptions.InconsistentMigrationHistory: Migration admin.0001_initial is applied before its dependency users.0001_initial on database 'default' [解决参考]( https://my.oschina.net/u/1446823/blog/861712)
     2.  Django在根据models生成数据库表时报 __init__() missing 1 required positional argument: 'on_delete' [解决参考](https://www.cnblogs.com/phyger/p/8035253.html)
-    3.  分页时显示错误![3ea0c04f67a7421f00a31c91cae29efb.png](en-resource://database/2282:0),可能class == page的问题
+    3.  分页时显示错误页码1与页码2的大小不一样,可能class == page的问题
         ```
         <li class="active"><a class="page" href="?page=2">2</a></li>
         <li class="active"><a href="?page=1">1</a></li>
@@ -56,9 +56,9 @@
         <source src="{{ MEDIA_URL }}{{ video.file }}" type='video/mp4'>  ##设置文件路径上传播放
         <source src="{{ video.url }}" type='video/mp4'> ## 将文件传输到阿里云，并且开启公共读权限
         ```
-    7. 关于pycharm 修改js 文件，浏览器加载失败问题，将浏览器端设置为不加载缓冲，清除浏览器缓冲，Ctrl+F5 强制刷新也可以![26df6d0204ad1a20b5ffdbd7d622e964.png](en-resource://database/2284:0)
+    7. 关于pycharm 修改js 文件，浏览器加载失败问题，将浏览器端设置为不加载缓冲，清除浏览器缓冲，Ctrl+F5 强制刷新也可以
     8. DEBUG = False 后 解决xadmin 后台js 样式丢失 [参考解决方案](https://blog.csdn.net/SL_World/article/details/89713329)
-    9. xadmin 添加插件报错![6ec4369da26ffb61476dd91197c65bad.png](en-resource://database/2286:0)
+    9. xadmin 添加插件报错，No modul named xadmin.plugs.** ,检查是不是忘记写逗号了！
 
 #### 关于项目的阿里云部署(仅供参考)
 
@@ -87,7 +87,7 @@ https://www.jianshu.com/p/1b4c5e57cd92)
 
 * #### 最后总结遇到的问题。
 
-    1. 遇到django 执行命令后没有反应，比如`process finish with exit code 0`.遇到此错误是django有语法错误，可以使用pycharm 的查看历史，对比自己不小心修改的部分。![04b54120a269686ef82015751d553e14.png](en-resource://database/2278:1)
+    1. 遇到django 执行命令后没有反应，比如`process finish with exit code 0`.遇到此错误是django有语法错误，可以使用pycharm 的查看历史，对比自己不小心修改的部分。
     2. 解决杀进程的问题，提供两个非常有用的代码
         1. ` sudo lsof -t -i tcp:8000 | xargs kill -9`杀掉占用8000端口的进程
         2. `# ps aux|grep uwsgi `查看进程uwsgi
